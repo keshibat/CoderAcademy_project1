@@ -16,3 +16,13 @@ Jerry: I don't think you do. If you did, I'd have a car.See, you know how to ___
 
 #answers for quiz1
 answer1 = ["reservation", "take", "hold", "holding"]
+
+def madlib_game()
+  puts "What's the answer for ___1___"
+  answer1 = ["reservation", "take", "hold", "holding"]
+  player_answer = gets.chomp
+  if player_answer = answer1[0]
+    puts "You're correct! Keep going!!"
+  end
+end
+madlib_game()
