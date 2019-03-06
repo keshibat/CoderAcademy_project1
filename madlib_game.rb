@@ -1,5 +1,8 @@
 #Fill in Blank Quiz for Coder Academy Project1
 
+# requiring gems color effects.
+require 'colorize'
+
 # variable called quiz1
 quiz1 = "\nAgent: I'm sorry, we have no mid-size available at the moment.\n
 Jerry: I don't understand, I made a reservation, do you have my reservation?\n
@@ -11,7 +14,7 @@ Jerry: I don't think you do. If you did, I'd have a car.See, you know how to ___
        that's really the most important part of the reservation, the ___4___.
        Anybody can just take them."
 
-puts quiz1
+puts quiz1.magenta
 
 #method for this fill in blank quiz
 def madlib_game()
