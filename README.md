@@ -34,3 +34,11 @@ $ ruby madlib_game.rb
 
 ![Your terminal should be like this](https://i.imgur.com/gtJqovz.png)
 
+## Resources
+![Flow chart][Imgur](https://i.imgur.com/80iHzh3.png)
+![github log][Imgur](https://i.imgur.com/LVTJ0t7.png)
+![git log][Imgur](https://i.imgur.com/euOzJhh.png)
+![trello_1][Imgur](https://i.imgur.com/1NRJ1vt.png)
+![trello_2][Imgur](https://i.imgur.com/2DEasqT.png)
+![trello_3][Imgur](https://i.imgur.com/yBytnQf.png)
+
