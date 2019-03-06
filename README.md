@@ -13,7 +13,7 @@ This collaboration work with @sjwconway for the first Coder Academy project.
 ```
 $gem install colorize
 ```
-(https://rubygems.org/gems/colorize/versions/0.8.1)
+[colorize 0.8.1](https://rubygems.org/gems/colorize/versions/0.8.1)
 
 
 
