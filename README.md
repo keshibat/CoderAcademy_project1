@@ -32,4 +32,4 @@ $ git clone https://github.com/keshibat/CoderAcademy_project1
 $ ruby madlib_game.rb
 ```
 
-![Your terminal should be like this](/docs/display.png?raw=true "Your terminal should be like this")
+![Your terminal should be like this][Imgur](https://i.imgur.com/gtJqovz.png)
