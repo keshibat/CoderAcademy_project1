@@ -3,20 +3,69 @@
 # requiring gems color effects.
 require 'colorize'
 
-# variable called quiz1
-quiz1 = "\nAgent: I'm sorry, we have no mid-size available at the moment.\n
-Jerry: I don't understand, I made a reservation, do you have my reservation?\n
+# word iteration method takes three argument quiz, word, and color
+# def word_iteration(quiz, word, color)
+#   #it takes the arugemnt(word) from the quiz then checkes the see if it's ture or fale
+#   #then if true, iterates through quiz with what word we passed in, then changes color of that word
+#   #if fale return quiz
+#   quiz.include?(word) ? quiz.gsub!(word, word.colorize(color)) : quiz
+# end
+
+# gretting message
+def greeting
+  "Welcome to the Seinfeld fill in blank game!\nPress enter to play!"
+end
+
+# script for this quiz
+def quiz
+"\nJerry: I don't understand, I made a reservation, do you have my reservation? \n
 Agent: Yes, we do, unfortunately we ran out of cars.\n
-Jerry: But the ___1___ keeps the car here. That's why you have the reservation.\n
-Agent: I know why we have reservations.\n
-Jerry: I don't think you do. If you did, I'd have a car.See, you know how to ___2___ the reservation,
-       you just don't know how to ___3___ the reservation and
-       that's really the most important part of the reservation, the ___4___.
-       Anybody can just take them."
+Jerry: But the " + "___1___ ".yellow + "keeps the car here. That's why you have the reservation.\n
+Agent: I know why we have reservations. \n
+Jerry: I don't think you do. If you did, I'd have a car. See, you know how to " + "___2___ ".yellow + "the reservation,\n
+       you just dont know how to " + "___3___ ".yellow + "the reservation, and that's really the most important part of the reservation...\n
+       The " + "___4___".yellow + ".Anybody can just take them."
+end
 
-puts quiz1.magenta
+# instruction for quiz
+def instructions
+  puts "How to play: ".upcase.green + "
+  Try to guess the missing words in the script!
+  You get a total of 3 chances to complete the game!
+  You get 5 points for every correct word!
+  Your points gets times by the number of chances left!"
+  puts "press " + "enter ".green + "to play or " + "q ".red + "to quit game"
+  user_input = gets.chomp.strip.downcase
+    if user_input == "q"
+      puts "See you later!"
+      exit
+    end
+end
 
-#method for this fill in blank quiz
+#greeting and user input to either play or look at instructions
+def guideline()
+  puts greeting.magenta + " or i for instructions!".magenta
+  user_input = gets.chomp.strip.downcase
+  if user_input == "i"
+     puts instructions
+     puts "            good luck!".upcase.green
+     puts "\nWelcome to Seinfeld Quiz!!"
+     sleep 3
+     puts quiz
+     #puts word_iteration(quiz, "Jerry:", :blue)
+  else
+    puts "            good luck!".upcase.green
+    puts "\nWelcome to Seinfeld Quiz!!"
+    sleep 3
+    puts quiz
+    #puts word_iteration(quiz, "Jerry:", :blue)
+  end
+end
+guideline()
+
+
+
+
 def madlib_game()
   puts "\nWelcome to Seinfeld Quiz!!"
   #Array:lists of replacement word to be passed in to the madlib_game method
@@ -44,6 +93,8 @@ def madlib_game()
       exit
     end
     #if player got wrong answer decrement of number of attempts
+
+
   else attempts -= 1
     puts "Wrong answer. Try again"
     #if player reached maximum attempts exit from the game
@@ -55,6 +106,4 @@ def madlib_game()
   end
 end
 
-
 madlib_game()
-
