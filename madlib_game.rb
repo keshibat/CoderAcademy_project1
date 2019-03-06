@@ -13,7 +13,7 @@ end
 
 # gretting message
 def greeting
-  "Welcome to the Seinfeld fill in blank game!\nPress enter to play!"
+  "Welcome to the Seinfeld fill in blank game!\nPress any key to play!"
 end
 
 # instruction for quiz
@@ -26,10 +26,12 @@ def instructions
   puts "press " + "enter ".green + "to play or " + "q ".red + "to quit game"
   user_input = gets.chomp.strip.downcase
     if user_input == "q"
-      puts "See you later!"
+      puts "See you later!".green
       exit
     end
 end
+
+
 
 
 
@@ -51,19 +53,18 @@ def guideline()
   if user_input == "i"
      puts instructions
      puts "            good luck!".upcase.green
-     puts "\nWelcome to Seinfeld Quiz!!"
-     sleep 1
+     sleep 2
      puts word_iteration(quiz, "Jerry:", :blue)
   else
     puts "            good luck!".upcase.green
-    puts "\nWelcome to Seinfeld Quiz!!"
-    sleep 1
+    
+    sleep 2
     puts word_iteration(quiz, "Jerry:", :blue)
   end
 end
+
+
 guideline()
-
-
 
 #method for this fill in blank quiz
 def madlib_game()
@@ -77,7 +78,7 @@ def madlib_game()
   score = 0
   #Starts with 0 loop through unitl the end of Array of blanks
   while player_blank < blanks.length
-      #pirnt which blank question  reffering to
+      #pirnts which blank question  reffering to
       puts "\nWhat is the answer to" "\n"+ blanks[player_blank].yellow + "?" "\n"
       #Getting user input for quize answers
       player_answer = gets.chomp.downcase
@@ -93,7 +94,7 @@ def madlib_game()
       score *= attempts
       puts "Congrats! You're Seinfeld master!!!!!, You filled all blanks without losing a chance! and scored #{score} points!".upcase.yellow
       puts"https://www.youtube.com/watch?v=A7uvttu8ct0 ".blue + "Ctrl + click on link to watch :)"
-      sleep 3
+      sleep 1
       puts "Would You Like To Play again? ('y' to play again/ any other key to exit)"
       user_input = gets.chomp.strip.downcase
       if user_input == "y"
@@ -103,10 +104,11 @@ def madlib_game()
         puts "Thanks for playing!".green
         exit
       end
+
     elsif player_blank == blanks.length and attempts == 2
       score *= attempts
       puts "Congrats! You know your Seinfeld, you filled all blanks with #{attempts} chances remaining! and scored #{score} points!".yellow
-      sleep 3
+      sleep 1
       puts "Would You Like To Play again? ('y' to play again/ any other key to exit)"
       user_input = gets.chomp.strip.downcase
       if user_input == "y"
@@ -116,10 +118,11 @@ def madlib_game()
         puts "Thanks for playing!".green
         exit
       end
+
     elsif player_blank == blanks.length and attempts == 1
       score *= attempts
       puts "Congrats! you could sharpen up on your Seinfeld knowledge!, you filled all blanks with #{attempts} chances remaining! and scored #{score} points!".yellow
-      sleep 3
+      sleep 1
       puts "Would You Like To Play again? ('y' to play again/ any other key to exit)"
       user_input = gets.chomp.strip.downcase
       if user_input == "y"
@@ -136,12 +139,12 @@ def madlib_game()
     puts "Wrong answer. Try again, chances left (#{attempts})".red
     #if player reached maximum attempts exit from the game
     if attempts == 0
-      puts "Sorry, you don't know Seinfeld..."
+      puts "Sorry, you don't know Seinfeld...".red + " but on the bright side you still got #{score} points!".green
       puts "Would you like to try again? ('y' to play again/ any other key to exit)"
       user_input = gets.chomp.strip.downcase
       if user_input == "y"
         puts "            good luck!".upcase.green
-sleep 3
+sleep 1
         puts word_iteration(quiz, "Agent:", :red)
         madlib_game
       else
