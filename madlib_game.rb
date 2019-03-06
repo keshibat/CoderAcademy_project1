@@ -4,27 +4,16 @@
 require 'colorize'
 
 # word iteration method takes three argument quiz, word, and color
-# def word_iteration(quiz, word, color)
-#   #it takes the arugemnt(word) from the quiz then checkes the see if it's ture or fale
-#   #then if true, iterates through quiz with what word we passed in, then changes color of that word
-#   #if fale return quiz
-#   quiz.include?(word) ? quiz.gsub!(word, word.colorize(color)) : quiz
-# end
+def word_iteration(quiz, word, color)
+  #it takes the arugemnt(word) from the quiz then checkes the see if it's ture or fale
+  #then if true, iterates through quiz with what word we passed in, then changes color of that word
+  #if fale return quiz
+  quiz.include?(word) ? quiz.gsub!(word, word.colorize(color)) : quiz
+end
 
 # gretting message
 def greeting
   "Welcome to the Seinfeld fill in blank game!\nPress enter to play!"
-end
-
-# script for this quiz
-def quiz
-"\nJerry: I don't understand, I made a reservation, do you have my reservation? \n
-Agent: Yes, we do, unfortunately we ran out of cars.\n
-Jerry: But the " + "___1___ ".yellow + "keeps the car here. That's why you have the reservation.\n
-Agent: I know why we have reservations. \n
-Jerry: I don't think you do. If you did, I'd have a car. See, you know how to " + "___2___ ".yellow + "the reservation,\n
-       you just dont know how to " + "___3___ ".yellow + "the reservation, and that's really the most important part of the reservation...\n
-       The " + "___4___".yellow + ".Anybody can just take them."
 end
 
 # instruction for quiz
@@ -42,6 +31,19 @@ def instructions
     end
 end
 
+
+
+# script for this quiz
+def quiz
+"\nJerry: I don't understand, I made a reservation, do you have my reservation? \n
+Agent: Yes, we do, unfortunately we ran out of cars.\n
+Jerry: But the " + "___1___ ".yellow + "keeps the car here. That's why you have the reservation.\n
+Agent: I know why we have reservations. \n
+Jerry: I don't think you do. If you did, I'd have a car. See, you know how to " + "___2___ ".yellow + "the reservation,\n
+       you just dont know how to " + "___3___ ".yellow + "the reservation, and that's really the most important part of the reservation...\n
+       The " + "___4___".yellow + ".Anybody can just take them."
+end
+
 #greeting and user input to either play or look at instructions
 def guideline()
   puts greeting.magenta + " or i for instructions!".magenta
@@ -51,18 +53,15 @@ def guideline()
      puts "            good luck!".upcase.green
      puts "\nWelcome to Seinfeld Quiz!!"
      sleep 3
-     puts quiz
-     #puts word_iteration(quiz, "Jerry:", :blue)
+     puts word_iteration(quiz, "Jerry:", :blue)
   else
     puts "            good luck!".upcase.green
     puts "\nWelcome to Seinfeld Quiz!!"
     sleep 3
-    puts quiz
-    #puts word_iteration(quiz, "Jerry:", :blue)
+    puts word_iteration(quiz, "Jerry:", :blue)
   end
 end
 guideline()
-
 
 
 
